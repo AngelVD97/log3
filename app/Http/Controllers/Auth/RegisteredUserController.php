@@ -37,18 +37,27 @@ class RegisteredUserController extends Controller
 
     {
 
-   
+        
+        
+
         $request->validate([
+
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'date' => 'required|date|before_or_equal: 10-08-2003',
+            //'date' => 'required|date|after_or_equal:10-02-2000',
+            'date' => [
+                'required',
+                function ($attribute, $value, $fail) use ($request) {
+                    if ('10-10-2000' < $request['start']) {
+                        $fail($attribute.' no es válido. La fecha final, debe ser posterior a la fecha inicial.');
+                    }}]
            
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->name,
+            'password' => "",
         ]);
 
         event(new Registered($user));
