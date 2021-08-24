@@ -35,12 +35,12 @@ Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
                 ->name('password.email');
 
 Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])
-                ->middleware('guest')
+               ->middleware('guest')
                ->name('password.reset');
 
 
 Route::post('/reset-password', [NewPasswordController::class, 'store'])
-              ->middleware('guest')
+                ->middleware('guest')
                ->name('password.update');
 
 Route::get('/verify-email', [EmailVerificationPromptController::class, '__invoke'])
@@ -70,11 +70,12 @@ Route::post('/logout', [LoginController::class, 'destroy'])
 
 Route::get('/create-pass', [NewPassController::class, 'create'])              
                 ->middleware('auth', 'verified')
-               ->name('password.reset');
+               ->name('password.create');
 
 
 Route::post('/create-pass', [NewPassController::class, 'store'])              
                 ->middleware('auth', 'verified')
                ->name('password.update');
+
 
         

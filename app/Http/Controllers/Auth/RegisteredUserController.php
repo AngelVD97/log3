@@ -44,13 +44,8 @@ class RegisteredUserController extends Controller
 
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            //'date' => 'required|date|after_or_equal:10-02-2000',
-            'date' => [
-                'required',
-                function ($attribute, $value, $fail) use ($request) {
-                    if ('10-10-2000' < $request['start']) {
-                        $fail($attribute.' no es válido. La fecha final, debe ser posterior a la fecha inicial.');
-                    }}]
+            'date' => 'required|date|before_or_equal:10-02-2000',
+           
            
         ]);
 
@@ -64,6 +59,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/create-pass'); //return redirect(RouteServiceProvider::HOME);
     }
 }

@@ -34,8 +34,13 @@ class NewPassController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'email' => 'required|email',
+            'password' => ['required', 'confirmed', Rules\Password::defaults()]
+        
        
         ]);
+
+
 
         // Here we will attempt to reset the user's password. If it is successful we
         // will update the password on an actual user model and persist it to the
@@ -47,7 +52,6 @@ class NewPassController extends Controller
                     'password' => Hash::make($request->password),
                 ])->save();
 
-                event(new PasswordReset($user));
             }
         );
 
@@ -59,4 +63,9 @@ class NewPassController extends Controller
                     : back()->withInput($request->only('email'))
                             ->withErrors(['email' => __($status)]);
     }
+
+
+
+
+
 }
