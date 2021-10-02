@@ -1,7 +1,8 @@
 @include('layouts.main')
-@section('contain')
-<h1>dahboar</h1>
-
+@extends('layouts.main')
+@section('contenido')
+    <h1>dahboar</h1>
+    <p>adadad</p>
 @endsection
 <!--
 
