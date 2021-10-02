@@ -1,109 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background: #0b2027;
-            font-family: 'Roboto', sans-serif;
-            line-height: 18px;
-        }
+<style>
 
-        a {
-            text-decoration: none;
+    .btn-menu {
+                display: none;
+                padding: 20px;
+            background: #0d2c44;
             color: #fff;
-        }
+            }
 
-        .btn-menu {
+            .contenedor-menu {
+                width: 20%;
+                min-width: 300px;
+                margin: 50px;
+                display: inline-block;
+                font-family: 'Roboto', sans-serif;
+                line-height: 18px;
+            }
+
+            .contenedor-menu .menu {
+                width: 100%;
+            }
+
+            .navbar-nav ul{
+                list-style: none;
+            }
+
+            .contenedor-menu .menu li a {
+                color: #494949;
+                display: block;
+                padding: 15px 20px;
+                background: #e9e9e9;
+            }
+
+            .contenedor-menu .menu li a:hover{
+                background: #1a95d5;
+                color: #fff;
+            }
+            .navbar-nav ul{
             display: none;
-            padding: 20px;
-           background: #0d2c44;
-           color: #fff;
-        }
+            }
+            
+            .contenedor-menu .menu ul li a{
+                background: #424242;
+                color: #e9e9e9;
+            }
 
-        .contenedor-menu {
-            width: 20%;
-            min-width: 300px;
-            margin: 50px;
-            display: inline-block;
-            font-family: 'Roboto', sans-serif;
-            line-height: 18px;
-        }
+            .contenedor-menu .menu .activado > a{
+                background: #1a95d5;
+                color: #fff;
+            }
 
-        .contenedor-menu .menu {
-            width: 100%;
-        }
+</style>
 
-        .contenedor-menu ul{
-            list-style: none;
-        }
+<script>
 
-        .contenedor-menu .menu li a {
-            color: #494949;
-            display: block;
-            padding: 15px 20px;
-            background: #e9e9e9;
-        }
+    $(document).ready(function(){
+        $('.navbar-nav li:has(ul)').click(function(e){
+            e.preventDefault();
 
-        .contenedor-menu .menu li a:hover{
-            background: #1a95d5;
-            color: #fff;
-        }
-.contenedor-menu .menu ul{
-    display: none;
-}
-        
 
-    </style>
-</head>
-<body>
+            if ($(this).hasClass('')){
+                $(this).children('ul').slideUp();
+                $(this).addClass('activado');
+                window.setTimeout( show_popup, 500 );
+
+            }
+
+            if ($(this).hasClass('activado')){
+                $(this).removeClass('activado');
+                //$(this).children('ul').slideUp();
+                $(this).children('ul').slideDown();
+                window.setTimeout( show_popup, 500 );
+                
+            }
+
+            
+            
+            //}else if($(this).hasClass('desactivado')){
+                //$('.navbar-nav  li ul').slideUp();
+               // $('.navbar-nav li').removeClass('activado');
+               // $(this).addClass('activado');
+               // $(this).children('ul').slideDown();
+              //  $(this).children('ul').slideUp();
+               
+            //}
+        });
+    });
+</script>
+
+
     
-        
-    <div class="contenedor-menu" >
-        <a href="#" class="btn-menu">Menu<i class="icono fa fa-bars" aria-hidden="true"></i></a>
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+
+            </div>
+                <div class="sidebar-brand-text mx-3">DASHBOARD<sup>2</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/">
+                <i class="fas fa-chart-line"></i>
+                   
+                    <span>Resumen</span></a>
+            </li>
 
 
-    <ul class="menu">
-
-        <li><a href="#">uno</a> <i class="icono fa fa-bath" aria-hidden="true"></i></li>
-       
-
-        <li><a href="#">dos <i class="icono fa fa-bath" aria-hidden="true"></i></a>
-       
-
-            <ul>
-                <li><a href="#">sub1</a></li>
-                <li><a href="#">sub2</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#">tres</a> <i class="icono fa fa-bath" aria-hidden="true"></i></li>
-       
-
-        <li><a href="#">cuatro</a><i class="icono fa fa-bath" aria-hidden="true"></i></li>
-        
+           <div nav-item><li  class="activado">
+                <a class="nav-link" href="/dashboard/">
+                <i class="fas fa-coins"></i>
+                <span>Ingresos</span></a>
+                <ul>
+                    <li >
+                    <a class="nav-item nav-link" href="/dashboard/">
+                    <i class="fas fa-users"></i>
+                    <span>Informe</span></a>
+                    </li>
+                    <li >
+                    <a class="nav-item nav-link" href="/dashboard/">
+                    <i class="fas fa-users"></i>
+                    <span>Tabulador</span></a>
+                    </li>
+                </ul>
+            </li></div>
 
 
-    </ul>
-    </div>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/">
+                <i class="fas fa-users"></i>
+                    <span>Usuarios</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/">
+                <i class="fas fa-shopping-cart"></i>
+                    <span>Ventas</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/">
+                <i class="fas fa-box"></i>
+                    <span>Servicios</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/">
+                <i class="fas fa-file-invoice"></i>
+                    <span>Facturas</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/">
+                <i class="fas fa-chart-pie"></i>
+                    <span>Resportes</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/">
+                <i class="fas fa-cog"></i>
+                    <span>Ajustes</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard/">
+                <i class="fas fa-cogs"></i>
+                    <span>Ajustes Avanzados</span></a>
+            </li>
 
-</body>
-</html>
 
 
 
+            <form  method="POST" action="{{ route('logout') }}">
+                    @csrf
+                   
+                    <div style="text-align: right">
+                    <a  href="route('logout')" 
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                    </div>
+                </form>
 
+        </ul>
