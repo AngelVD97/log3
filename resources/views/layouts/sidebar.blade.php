@@ -3,12 +3,7 @@
 
 <style>
 
-    .btn-menu {
-                display: none;
-                padding: 20px;
-            background: #0d2c44;
-            color: #fff;
-            }
+
 
             .contenedor-menu {
                 width: 20%;
@@ -23,6 +18,10 @@
                 width: 100%;
             }
 
+            .sub-nav-item{
+                
+            }
+
             .navbar-nav ul{
                 list-style: none;
             }
@@ -34,21 +33,21 @@
                 background: #e9e9e9;
             }
 
-            .contenedor-menu .menu li a:hover{
-                background: #1a95d5;
+            .navbar-nav li a:hover{
+                background: #0070C0;
                 color: #fff;
             }
             .navbar-nav ul{
             display: none;
             }
             
-            .contenedor-menu .menu ul li a{
+            .contenedor-menu .menu ul li > a{
                 background: #424242;
                 color: #e9e9e9;
             }
 
-            .contenedor-menu .menu .activado > a{
-                background: #1a95d5;
+            .navbar-nav .activado > a{
+                background: #0070C0; 
                 color: #fff;
             }
 
@@ -62,7 +61,7 @@
 
 
             if ($(this).hasClass('')){
-                $(this).children('ul').slideUp();
+                 $(this).children('ul').slideDown();
                 $(this).addClass('activado');
                 window.setTimeout( show_popup, 500 );
 
@@ -71,7 +70,7 @@
             if ($(this).hasClass('activado')){
                 $(this).removeClass('activado');
                 //$(this).children('ul').slideUp();
-                $(this).children('ul').slideDown();
+                 $(this).children('ul').slideUp();
                 window.setTimeout( show_popup, 500 );
                 
             }
@@ -87,7 +86,18 @@
                
             //}
         });
+
+        $('.navbar-nav li ul li a').click(function(){
+	    window.location.href=$(this).attr("href");
+        });
+
+        
+
+
     });
+
+
+
 </script>
 
 
@@ -112,30 +122,76 @@
             </li>
 
 
-           <div nav-item><li  class="activado">
+           <div class="nav-item">
+               <li  class="">
                 <a class="nav-link" href="/dashboard/">
                 <i class="fas fa-coins"></i>
                 <span>Ingresos</span></a>
-                <ul>
-                    <li >
-                    <a class="nav-item nav-link" href="/dashboard/">
-                    <i class="fas fa-users"></i>
+                <ul class="navbar-nav" >
+                    
+                    <div class="nav-item" ><li>
+                    <a class="nav-link" href="/informe/">
+                    <pre style='display:inline'> </pre> 
+                    <i class="fas fa-chart-bar"></i>
                     <span>Informe</span></a>
-                    </li>
-                    <li >
-                    <a class="nav-item nav-link" href="/dashboard/">
-                    <i class="fas fa-users"></i>
+                    </li></div>
+
+                    <li class="nav-item" class="sub-nav-item">
+                    <a class="nav-link" href="/dashboard/">
+                    <pre style='display:inline'> </pre> 
+                    <i class="fas fa-table"></i>
                     <span>Tabulador</span></a>
                     </li>
+
+                    <li class="nav-item" class="sub-nav-item">
+                    <a class="nav-link" href="/dashboard/">
+                    <pre style='display:inline'> </pre> 
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Gastos</span></a>
+
+                    <li class="nav-item" class="sub-nav-item">
+                    <a class="nav-link" href="/dashboard/">
+                    <pre style='display:inline'> </pre> 
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>EN/SA</span></a>
+                    </li>
+                    </li>
                 </ul>
-            </li></div>
+                </li>
+             </div>
 
-
-            <li class="nav-item">
+             <div class="nav-item">
+                <li class="">
                 <a class="nav-link" href="/dashboard/">
                 <i class="fas fa-users"></i>
-                    <span>Usuarios</span></a>
-            </li>
+                <span>Usuarios</span></a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item" class="sub-nav-item">
+                        <a class="nav-link" href="/informe/">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Informe</span></a>
+                        </li>
+
+                        <li class="nav-item" class="sub-nav-item">
+                        <a class="nav-link" href="/dashboard/">
+                        <i class="fas fa-table"></i>
+                        <span>Tabulador</span></a>
+                        </li>
+
+                        <li class="nav-item" class="sub-nav-item">
+                        <a class="nav-link" href="/dashboard/">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Gastos</span></a>
+
+                        <li class="nav-item" class="sub-nav-item">
+                        <a class="nav-link" href="/dashboard/">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>EN/SA</span></a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
+            </div>
             <li class="nav-item">
                 <a class="nav-link" href="/dashboard/">
                 <i class="fas fa-shopping-cart"></i>

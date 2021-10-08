@@ -16,19 +16,7 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-
-            </header>
-
-            <!-- Page Content -->
-            <main>
-         
-            </main>
-        </div>
-    </body>
+   <body>
+       
+   </body>
 </html>
