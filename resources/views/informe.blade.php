@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('contenido')
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 
     <style>
 
@@ -17,13 +17,13 @@
 */
 
 
-h1{
+.targetas h1{
     font-size: 1.5rem;
     color: #C00000;  
 }
 
 
-.select_mate{
+.targetas  .select_mate{
     height: 40px;
     /*display: inline-flex;*/
 }
@@ -34,11 +34,11 @@ select {
 }
 
 
-.card h2{
+.targetas .card h2{
     font-size: 1rem;
 }
 
-.card{
+.targetas .card{
     width: 20%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px;
@@ -48,8 +48,7 @@ select {
 }
 
 
-
-.card .card_header{
+.targetas .card .card_header{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -68,25 +67,25 @@ select {
 .blue{
     background-color: #21A1C9;
 }
-.card .card_header .tittle,.card .card_header .id{
+.targetas .card .card_header .tittle,.card .card_header .id{
     /*display: flex;*/
     align-items: center;
 }
 
 
-.card .card_header .tittle p{
+.targetas .card .card_header .tittle p{
     margin-left: .5em;
 }
-.card .card_header .id p{
+.targetas .card .card_header .id p{
     margin-right: 1em;
 }
-.card .card_section{
+.targetas .card .card_section{
     padding: .7em .5em;
     font-size: 2rem;
     color: #C00000;
     text-align: center;
 }
-.card .card_footer{
+.targetas .card .card_footer{
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -96,7 +95,7 @@ select {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-.card .card_footer:before{
+.targetas .card .card_footer:before{
     content: '';
     position: absolute;
     width: 5%;
@@ -104,17 +103,62 @@ select {
     top: 0;
     left: 0;
     border-top: 1px solid #888888;
+
+}
+
+.grafico{
+
+    position: fixed;
+    width: 915px;
+    height: 420px;
+   /* left: 500px;*/
+    top: 100px;
+    right: -250px;
+    /*bottom: 100px;*/
+    display:none;
 }
 
 
+
+
+.grafico .card{
+    flex-direction:column;min-width:0;word-wrap:break-word;background-color:#fff;background-clip:border-box;border:1px solid #e3e6f0;border-radius:.35rem
+}
     </style>
 
 
+<script>
+
+       
+$(document).ready(function(){
+
+
+
+        $("#close1").click(function(){
+        //$(".grafico").hide();
+       //$(this).removeClass('activado');
+       // $(this).addClass('no').delay(500);
+        document.getElementById("obj2").style.display = "none";
+        //window.setTimeout( show_popup, 500 );
+  });
+
+        $("#card1").click(function(){
+        //$(".grafico").show()();
+       // $(this).addClass('activado');
+        //$(this).removeClass('no').delay(500);
+        document.getElementById("obj2").style.display = "block";
+        //window.setTimeout( show_popup, 500 );
+  });
+});               
+   
+
+</script>
 
     <h1>Informe</h1>
 
 
 
+<div class="targetas">
 
     <div class="select_mate" data-mate-select="active" >
         <select name="" onchange="" onclick="return false;" id="">
@@ -133,7 +177,8 @@ select {
 
 
     
-    <div class="card">
+    <div class="card" id="card1">
+    <div class="activado">
         <div class="card_header red">
             <div class="tittle">
                 <div class="circle"></div>
@@ -146,6 +191,7 @@ select {
         </div>
         <div class="card_section">
             <p>MXN2459</p>
+        </div>
         </div>
        
     </div>
@@ -268,6 +314,42 @@ select {
         </div>
        
     </div>
+
+    </div>
+
+
+<div class="grafico" id="obj2">
+    <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" id="close1" >Cerrar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                        <canvas id="myAreaChart" width="429" height="320" style="display: block; width: 429px; height: 320px;" class="chartjs-render-monitor"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+</div>
+
+
+
+
 
 <div class="datagrid">
     <table>

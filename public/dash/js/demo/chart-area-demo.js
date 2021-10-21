@@ -32,9 +32,9 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ["12-09'20", "13-09-21", "14-09-21", "15-09-21", "16-09-21", "17-09-21", "18-09-21", "19-09-21", "20-09-21", "21-09-21", "22-09-21", "23-09-21"],
     datasets: [{
-      label: "Earnings",
+      label: "Ingresos",
       lineTension: 0.3,
       backgroundColor: "rgba(78, 115, 223, 0.05)",
       borderColor: "rgba(78, 115, 223, 1)",
