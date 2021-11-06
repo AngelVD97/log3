@@ -9,7 +9,48 @@
  tabala css
 
 */
-.datagrid table { border-collapse: collapse; text-align: left; width: 100%; } .datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #00B050; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }.datagrid table td, .datagrid table th { padding: 3px 10px; }.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00B050), color-stop(1, #00B050) );background:-moz-linear-gradient( center top, #00B050 5%, #00B050 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00B050', endColorstr='#00B050');background-color:#00B050; color:#FFFFFF; font-size: 15px; font-weight: bold; border-left: 0px solid #00B050; } .datagrid table thead th:first-child { border: none; }.datagrid table tbody td { color: #9C8E8F; font-size: 12px;border-bottom: 1px solid #00B050;font-weight: normal; }.datagrid table tbody .alt td { background: #B6FFA3; color: #00496B; }.datagrid table tbody td:first-child { border-left: none; }.datagrid table tbody tr:last-child td { border-bottom: none; }
+table.steelBlueCols {
+  background-color: #F6FFF6;
+  width: 1024px;
+  text-align: left;
+  border-collapse: collapse;
+  margin: 20px 10px;
+ 
+}
+table.steelBlueCols td, table.steelBlueCols th {
+  border: 0px solid #555555;
+  padding: 10px 15px;
+}
+table.steelBlueCols tbody td {
+  font-size: 11px;
+  font-weight: bold;
+  color: #8F8F8F;
+}
+table.steelBlueCols tr:nth-child(even) {
+  background: #CECECE;
+}
+table.steelBlueCols thead {
+  background: #00B050;
+}
+table.steelBlueCols thead th {
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: left;
+}
+table.steelBlueCols tfoot td {
+  font-size: 13px;
+}
+table.steelBlueCols tfoot .links {
+  text-align: right;
+}
+table.steelBlueCols tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #398AA4;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
 
 /*
  fin tabla css
@@ -43,9 +84,34 @@ select {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px;
     margin-bottom: 1em;
-    display: flex;/*inline-flex;*/
+    display: inline-flex;
     margin: 1rem;
+
 }
+
+.targetas .card:hover{
+
+    cursor: pointer
+    
+}
+
+
+
+
+
+.targetas .card2:hover{
+
+cursor: pointer
+
+}
+
+.targetas .card2{
+    
+    display: flex;
+    margin: 2rem;
+  
+}
+
 
 
 .targetas .card .card_header{
@@ -109,11 +175,11 @@ select {
 .grafico{
 
     position: fixed;
-    width: 915px;
+    width: 1115px;
     height: 420px;
    /* left: 500px;*/
     top: 100px;
-    right: -250px;
+    right: -270px;
     /*bottom: 100px;*/
     display:none;
 }
@@ -139,6 +205,9 @@ $(document).ready(function(){
        //$(this).removeClass('activado');
        // $(this).addClass('no').delay(500);
         document.getElementById("obj2").style.display = "none";
+        $(".card").removeClass('card2');      
+       // document.getElementsByClassName("card").style.display = "flex";
+        
         //window.setTimeout( show_popup, 500 );
   });
 
@@ -146,7 +215,9 @@ $(document).ready(function(){
         //$(".grafico").show()();
        // $(this).addClass('activado');
         //$(this).removeClass('no').delay(500);
+        $(".card").addClass('card2');
         document.getElementById("obj2").style.display = "block";
+        //document.getElementsByClassName("card").style.display = "inline-flex";
         //window.setTimeout( show_popup, 500 );
   });
 });               
@@ -351,58 +422,31 @@ $(document).ready(function(){
 
 
 
-<div class="datagrid">
-    <table>
-        <thead>
-            <tr>
-                <th>header</th>
-                <th>header</th>
-                <th>header</th>
-                <th>header</th>
-                <th>header</th>
-                <th>header</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-            </tr>
-            <tr class="alt">
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-            </tr>
-            <tr>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-            </tr>
-            <tr class="alt">
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-            </tr>
-            <tr>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-            </tr>
-            <tr class="alt">
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-                <td>data</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<table class="steelBlueCols">
+<thead>
+<tr>
+<th>Usuario</th>
+<th>Fecha</th>
+<th>Hora</th>
+<th>Servicio</th>
+<th>Timepo</th>
+<th>Lugar</th>
+<th>Mtd Pago</th>
+<th>Ingresos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cell1_1</td><td>cell2_1</td><td>cell3_1</td><td>cell4_1</td><td>cell5_1</td><td>cell6_1</td><td>cell7_1</td><td>cell8_1</td></tr>
+<tr>
+<td>cell1_2</td><td>cell2_2</td><td>cell3_2</td><td>cell4_2</td><td>cell5_2</td><td>cell6_2</td><td>cell7_2</td><td>cell8_2</td></tr>
+<tr>
+<td>cell1_3</td><td>cell2_3</td><td>cell3_3</td><td>cell4_3</td><td>cell5_3</td><td>cell6_3</td><td>cell7_3</td><td>cell8_3</td></tr>
+<tr>
+<td>cell1_4</td><td>cell2_4</td><td>cell3_4</td><td>cell4_4</td><td>cell5_4</td><td>cell6_4</td><td>cell7_4</td><td>cell8_4</td></tr>
+</tbody>
+</tr>
+</table>
 
 
 @endsection

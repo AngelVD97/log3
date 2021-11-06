@@ -25,5 +25,9 @@ Route::get('/informe', function () {
     return view('informe');
 })->middleware(['auth', 'verified',])->name('informe');
 
+Route::get('/tabulador', function () {
+    return view('tabulador');
+})->middleware(['auth', 'verified',])->name('tabulador');
+
 
 require __DIR__.'/auth.php';

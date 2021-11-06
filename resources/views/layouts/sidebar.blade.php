@@ -12,14 +12,15 @@
                 display: inline-block;
                 font-family: 'Roboto', sans-serif;
                 line-height: 18px;
+                
             }
 
             .contenedor-menu .menu {
                 width: 100%;
+                
             }
 
             .sub-nav-item{
-                
             }
 
             .navbar-nav ul{
@@ -137,7 +138,7 @@
                     </li></div>
 
                     <li class="nav-item" class="sub-nav-item">
-                    <a class="nav-link" href="/dashboard/">
+                    <a class="nav-link" href="/tabulador/">
                     <pre style='display:inline'> </pre> 
                     <i class="fas fa-table"></i>
                     <span>Tabulador</span></a>
