@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\impController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::get('/informe', function () {
 Route::get('/tabulador', function () {
     return view('tabulador');
 })->middleware(['auth', 'verified',])->name('tabulador');
+
+Route::get('/imprimir-pdf', [impController::class, 'imp']);
 
 
 require __DIR__.'/auth.php';
