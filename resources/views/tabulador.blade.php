@@ -145,7 +145,7 @@ nodoTr.innerHTML = nuevoCodigoHtml;
 
 nodoContenedorForm.innerHTML = 'Pulse Aceptar para guardar los cambios o cancelar para anularlos'+
 
-'<form name = "formulario" action="ac" method="get" onsubmit="capturarEnvio()" onreset="anular()">'+
+'<form name = "formularcio" ation="ac" method="get" onsubmit="capturarEnvio()" onreset="anular()">'+
 
 '<input class="boton" type = "submit" value="Aceptar"> <input class="boton" type="reset" value="Cancelar">';
 
@@ -309,7 +309,7 @@ window.location.reload();
 </table>
 
 <div id="contenedorForm">
-
+@csrf
 </div>
 
 

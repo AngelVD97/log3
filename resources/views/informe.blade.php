@@ -193,6 +193,9 @@ cursor: pointer
     </style>
 
 
+
+
+
 <script>
 
        
@@ -222,6 +225,15 @@ $(document).ready(function(){
   });
 });               
    
+
+
+function abre()
+{
+var w=window.open("","","")
+w.document.body.innerHTML=document.getElementById("obj2").innerHTML
+}
+
+
 
 </script>
 
@@ -390,6 +402,10 @@ $(document).ready(function(){
 
 
 <div class="grafico" id="obj2">
+<link href="{{ asset('/dash/css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+
+
     <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
@@ -402,7 +418,7 @@ $(document).ready(function(){
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Opciones:</div>
                                             <a class="dropdown-item" href="/imprimir-pdf">Descargar Infomrme</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" onclick=abre()>Another action</a>
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" id="close1" >Cerrar</a>
                                         </div>
