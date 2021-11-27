@@ -17,11 +17,27 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" media="screen"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" />
 
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset ('/dash/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset ('/dash/css/sb-admin-2.min.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ asset ('/dash/css/sb-admin-2.min.css') }}" rel="stylesheet" media="print" >
+
+<style>
+   
+
+   i:hover{
+  color: white;
+
+
+}
+</style>
+
+<script>
+
+</script>
 
 </head>
 
@@ -89,6 +105,8 @@
                                 </form>
                             </div>
                         </li>
+
+                        <a href="javascript:window.print()"><i href=”javascript:window.print()” class="fas fa-print fa-2x"></i></a>
 
                         <!-- Nav Item - Alerts -->  
                         
